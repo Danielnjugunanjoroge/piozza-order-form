@@ -2,220 +2,219 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pizza Byte – Online Ordering Form</title>
+<title>Pizza Byte | Online Ordering Form</title>
 
 <style>
     body {
-        font-family: "Segoe UI", Arial, sans-serif;
-        background:#eaeaea;
-        margin:0;
-        padding:30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
     }
 
-    .wrapper {
-        width: 960px;
-        margin: auto;
+    .container {
+        width: 900px;
+        margin: 40px auto;
         background: #fff;
-        border: 2px solid #444;
-        padding: 15px;
+        border: 1px solid #ccc;
+        padding: 20px;
     }
 
     h1 {
         text-align: center;
-        margin: 0;
-        font-size: 26px;
+        margin-bottom: 10px;
     }
 
     .subtitle {
         text-align: center;
         font-size: 14px;
-        margin-bottom: 15px;
+        color: #666;
+        margin-bottom: 20px;
     }
 
-    .row {
+    .form-section {
         display: flex;
-        gap: 15px;
+        gap: 20px;
     }
 
-    .section {
-        border: 1.5px solid #555;
-        padding: 10px;
+    .box {
+        border: 1px solid #ccc;
+        padding: 15px;
         flex: 1;
     }
 
-    .section-title {
-        font-weight: bold;
-        border-bottom: 1.5px solid #555;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-        font-size: 15px;
+    .box h3 {
+        margin-top: 0;
+        background: #eee;
+        padding: 8px;
+        font-size: 16px;
     }
 
     label {
-        font-size: 13px;
         display: block;
-        margin-top: 8px;
+        margin-top: 10px;
+        font-size: 14px;
     }
 
     input[type="text"],
     input[type="tel"],
-    select {
+    select,
+    textarea {
         width: 100%;
-        padding: 5px;
-        font-size: 13px;
-        border: 1px solid #777;
+        padding: 7px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
 
     textarea {
-        width: 100%;
-        height: 70px;
-        border: 1px solid #777;
+        resize: none;
+        height: 80px;
     }
 
-    /* Pizza size circles */
-    .sizes {
+    .pizza-size {
         display: flex;
         gap: 15px;
-        margin-top: 8px;
+        margin-top: 10px;
     }
 
-    .circle {
-        width: 42px;
-        height: 42px;
-        border: 2px solid #000;
+    .size-circle {
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
+        border: 2px solid #d32f2f;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 13px;
+        cursor: pointer;
     }
 
-    /* Toppings */
     .toppings {
         display: flex;
-        gap: 40px;
-        font-size: 13px;
+        gap: 20px;
+        margin-top: 10px;
     }
 
-    .toppings strong {
-        display: block;
-        margin-bottom: 6px;
+    .toppings div {
+        flex: 1;
     }
 
     .footer {
-        margin-top: 15px;
+        margin-top: 20px;
         text-align: center;
-        font-size: 12px;
-        border-top: 1.5px solid #555;
-        padding-top: 8px;
+        font-size: 13px;
+        color: #555;
     }
 
-    .submit {
+    .submit-btn {
+        margin-top: 20px;
         text-align: center;
-        margin-top: 15px;
     }
 
     button {
-        padding: 8px 20px;
-        font-size: 14px;
-        border: 1.5px solid #000;
-        background: #f2f2f2;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
     }
 
     button:hover {
-        background: #ddd;
+        background: #b71c1c;
     }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
+    <h1>🍕 Pizza Byte</h1>
+    <div class="subtitle">Online Ordering Form</div>
 
-    <h1>PIZZA BYTE</h1>
-    <div class="subtitle">ONLINE ORDERING FORM</div>
+    <form>
+        <div class="form-section">
 
-    <div class="row">
+            <!-- Customer Info -->
+            <div class="box">
+                <h3>Customer Information</h3>
 
-        <!-- CUSTOMER INFO -->
-        <div class="section">
-            <div class="section-title">Customer Information</div>
+                <label>First Name *</label>
+                <input type="text" required>
 
-            <label>First Name</label>
-            <input type="text">
+                <label>Last Name *</label>
+                <input type="text" required>
 
-            <label>Last Name</label>
-            <input type="text">
+                <label>Delivery Location *</label>
+                <input type="text" required>
 
-            <label>Delivery Address</label>
-            <input type="text">
+                <label>Phone *</label>
+                <input type="tel" placeholder="07xx xxx xxx" required>
 
-            <label>Phone Number</label>
-            <input type="tel">
-
-            <label>Preferred Delivery Time</label>
-            <input type="text">
-        </div>
-
-        <!-- ORDER DETAILS -->
-        <div class="section">
-            <div class="section-title">Order Details</div>
-
-            <label>Pizza Size (inches)</label>
-            <div class="sizes">
-                <div class="circle">10</div>
-                <div class="circle">12</div>
-                <div class="circle">14</div>
+                <label>Delivery Time</label>
+                <input type="text" placeholder="Leave blank for immediate delivery">
             </div>
 
-            <label>Crust Type</label>
-            <select>
-                <option>Thin</option>
-                <option>Thick</option>
-                <option>Stuffed</option>
-            </select>
+            <!-- Pizza Customization -->
+            <div class="box">
+                <h3>Customize Your Pizza</h3>
 
-            <label>Quantity</label>
-            <input type="text" value="1">
+                <label>Select Pizza Size</label>
+                <div class="pizza-size">
+                    <div class="size-circle">10</div>
+                    <div class="size-circle">12</div>
+                    <div class="size-circle">14</div>
+                </div>
 
-            <label>Special Instructions</label>
-            <textarea></textarea>
-        </div>
-    </div>
+                <label>Choose Crust</label>
+                <select>
+                    <option>Thin</option>
+                    <option>Thick</option>
+                    <option>Cheese Stuffed</option>
+                </select>
 
-    <!-- TOPPINGS -->
-    <div class="section" style="margin-top:15px;">
-        <div class="section-title">Toppings</div>
+                <label>Quantity</label>
+                <input type="text" value="1">
 
-        <div class="toppings">
-            <div>
-                <strong>Meat</strong>
-                <input type="checkbox"> Pepperoni<br>
-                <input type="checkbox"> Ham<br>
-                <input type="checkbox"> Sausage<br>
-                <input type="checkbox"> Chicken
-            </div>
-
-            <div>
-                <strong>Vegetables</strong>
-                <input type="checkbox"> Mushrooms<br>
-                <input type="checkbox"> Onions<br>
-                <input type="checkbox"> Green Peppers<br>
-                <input type="checkbox"> Olives
+                <label>Special Instructions</label>
+                <textarea></textarea>
             </div>
         </div>
-    </div>
 
-    <div class="submit">
-        <button>Submit Order</button>
-    </div>
+        <!-- Toppings -->
+        <div class="box" style="margin-top:20px;">
+            <h3>Toppings</h3>
+
+            <div class="toppings">
+                <div>
+                    <strong>Meat Toppings</strong><br>
+                    <input type="checkbox"> Pepperoni<br>
+                    <input type="checkbox"> Ham<br>
+                    <input type="checkbox"> Sausage<br>
+                    <input type="checkbox"> Chicken<br>
+                </div>
+
+                <div>
+                    <strong>Vegetable Toppings</strong><br>
+                    <input type="checkbox"> Mushrooms<br>
+                    <input type="checkbox"> Onions<br>
+                    <input type="checkbox"> Green Peppers<br>
+                    <input type="checkbox"> Jalapenos<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-btn">
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
 
     <div class="footer">
-        Pizza Byte • Fast & Fresh Delivery • Call: 032 555 7599
+        Thank you for choosing Pizza Byte — fast, hot & delivered to your door 🍕<br>
+        123 Market Street | Call: 032 555 7599
     </div>
-
 </div>
 
 </body>
