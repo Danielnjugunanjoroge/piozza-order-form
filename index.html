@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pizza Byte | Online Ordering Form</title>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        display: flex;
+        gap: 20px;
+    }
+
+    .box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        flex: 1;
+    }
+
+    .box h3 {
+        margin-top: 0;
+        background: #eee;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 7px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    textarea {
+        resize: none;
+        height: 80px;
+    }
+
+    .pizza-size {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .size-circle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #d32f2f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .toppings {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .toppings div {
+        flex: 1;
+    }
+
+    .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #555;
+    }
+
+    .submit-btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #b71c1c;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🍕 Pizza Byte</h1>
+    <div class="subtitle">Online Ordering Form</div>
+
+    <form>
+        <div class="form-section">
+
+            <!-- Customer Info -->
+            <div class="box">
+                <h3>Customer Information</h3>
+
+                <label>First Name *</label>
+                <input type="text" required>
+
+                <label>Last Name *</label>
+                <input type="text" required>
+
+                <label>Delivery Location *</label>
+                <input type="text" required>
+
+                <label>Phone *</label>
+                <input type="tel" placeholder="07xx xxx xxx" required>
+
+                <label>Delivery Time</label>
+                <input type="text" placeholder="Leave blank for immediate delivery">
+            </div>
+
+            <!-- Pizza Customization -->
+            <div class="box">
+                <h3>Customize Your Pizza</h3>
+
+                <label>Select Pizza Size</label>
+                <div class="pizza-size">
+                    <div class="size-circle">10</div>
+                    <div class="size-circle">12</div>
+                    <div class="size-circle">14</div>
+                </div>
+
+                <label>Choose Crust</label>
+                <select>
+                    <option>Thin</option>
+                    <option>Thick</option>
+                    <option>Cheese Stuffed</option>
+                </select>
+
+                <label>Quantity</label>
+                <input type="text" value="1">
+
+                <label>Special Instructions</label>
+                <textarea></textarea>
+            </div>
+        </div>
+
+        <!-- Toppings -->
+        <div class="box" style="margin-top:20px;">
+            <h3>Toppings</h3>
+
+            <div class="toppings">
+                <div>
+                    <strong>Meat Toppings</strong><br>
+                    <input type="checkbox"> Pepperoni<br>
+                    <input type="checkbox"> Ham<br>
+                    <input type="checkbox"> Sausage<br>
+                    <input type="checkbox"> Chicken<br>
+                </div>
+
+                <div>
+                    <strong>Vegetable Toppings</strong><br>
+                    <input type="checkbox"> Mushrooms<br>
+                    <input type="checkbox"> Onions<br>
+                    <input type="checkbox"> Green Peppers<br>
+                    <input type="checkbox"> Jalapenos<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-btn">
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+
+    <div class="footer">
+        Thank you for choosing Pizza Byte — fast, hot & delivered to your door 🍕<br>
+        123 Market Street | Call: 032 555 7599
+    </div>
+</div>
+
+</body>
+</html>
